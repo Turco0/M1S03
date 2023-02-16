@@ -39,3 +39,9 @@ function adicionarMarcaCarro() {
     console.log(marca.marca);
   }
 }
+
+function listarVeiculos() {
+for (let veiculo of veiculos) {
+console.log(${veiculo.modelo} - ${veiculo.marca} - ${veiculo.km}KM - Valor: R$${veiculo.valor} - Cor: ${veiculo.cor});
+}
+}
