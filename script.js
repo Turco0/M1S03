@@ -4,6 +4,21 @@ let modelosDeCarro = [{ modelo: "A4" }, { modelo: "A5" }];
 
 let veiculos = [{ modelo: "A4", marca: "Audi", km: 0, valor: 5000 , cor: 'Verde'}, { modelo: "A5", marca: "BMW", km: 1555, valor: 10000, cor: 'Azul'}]
 
+for (modelo of modelosDeCarro) {
+let opcaomodelo = document.querySelector("#modelo-veiculo");
+let option = document.createElement("option");
+option.innerHTML = modelo.modelo;
+option.value = modelo.modelo;
+opcaomodelo.appendChild(option);
+}
+for (marca of marcasDeCarro) {
+let opcaomarca = document.querySelector("#marca-veiculo");
+let option = document.createElement("option");
+option.innerHTML = marca.marca;
+option.value = marca.marca;
+opcaomarca.appendChild(option);
+}
+
 function adicionarModeloCarro(){
 const valor = document.querySelector('#modelo').value;
 let itemNovo = new Array
@@ -24,9 +39,7 @@ let cor = document.getElementById("cor-veiculo").value;
 let veiculo = { modelo: modelo, marca: marca, km: km, valor:valor, cor: cor};
 veiculos.push(veiculo);
 window.alert("Veiculo adicionado com sucesso");
-for (let veiculo of veiculos) {
-console.log(veiculo.modelo);
-}
+console.log(veiculos);
 }
 
 function adicionarMarcaCarro() {
