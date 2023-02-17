@@ -17,28 +17,45 @@
       </ul>
     </header>
     <main>
-        <section>
-            <h1>Cadastro de Veiculo</h1>
-            <div>
-              Modelo: <select name="modelos" id="modelo-veiculo"></select>
-            </div>
-            <div>
-              Marca: <select name="marcas" id="marca-veiculo"></select>
-            </div>
-            <div>
-              Km: <input type="number" id="km-veiculo">
-            </div>
-            <div>
-              Preço: <input type="number" name="" id="valor-veiculo">
-            </div>
-            <div>
-              Cor: <input type="text" name="" id="cor-veiculo">
-            </div>
-            <div>
-              <button onclick="adicionarVeiculo()">Cadastrar</button>
-            </div>
-        </section>
-    </main>    
+      <section>
+        <h1>Cadastro de Veiculo</h1>
+        <div>
+          Foto:<input type="url" name="imagem-veiculo" id="imagem-veiculo" /> 
+        </div>
+        <div>
+          Modelo:
+          <select name="modelo-veiculo" id="modelo-veiculo"></select>
+        </div>
+        <div>
+          Marca:
+          <select name="marca-veiculo" id="marca-veiculo"></select>
+        </div>
+        <div>Km: <input type="number" id="km-veiculo" /></div>
+        <div>Preço: <input type="number" name="" id="valor-veiculo" /></div>
+        <div>Cor: <input type="text" name="" id="cor-veiculo" /></div>
+        <div>
+          <button onclick="adicionarVeiculo()">Cadastrar</button>
+        </div>
+      </section>
+    </main>
     <script src="script.js"></script>
-</body>
+    <script>
+      modelosDeCarro = JSON.parse(localStorage.getItem("modelosDeCarro"));
+      marcasDeCarro = JSON.parse(localStorage.getItem("marcasDeCarro"));
+
+      for (let modelo of modelosDeCarro) {
+        let opcaomodelo = document.getElementsByName("modelo-veiculo")[0];
+        let option = document.createElement("option");
+        option.innerHTML = modelo;
+        option.value = modelo;
+        opcaomodelo.appendChild(option);
+      }
+      for (let marca of marcasDeCarro) {
+        let opcaomarca = document.getElementsByName("marca-veiculo")[0];
+        let option = document.createElement("option");
+        option.innerHTML = marca;
+        option.value = marca;
+        opcaomarca.appendChild(option);
+      }</script>
+  </body>
 </html>
