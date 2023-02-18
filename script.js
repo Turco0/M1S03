@@ -1,3 +1,11 @@
+
+let modelosDeCarro = localStorage.getItem('modelosDeCarro') ? pegarVeiculos() : [];
+let marcasDeCarro = localStorage.getItem('marcasDeCarro')? pegarMarcas() : [];
+let veiculos = localStorage.getItem('veiculos')? pegarVeiculos() : [];
+salvarVeiculos(veiculos);
+salvarModelosDeCarro(modelosDeCarro);
+salvarMarcasDeCarro(marcasDeCarro);
+
 function adicionarModeloCarro() {
   let modelosDeCarro = pegarModelosDeCarro();
   const valor = document.querySelector("#modelo").value;
