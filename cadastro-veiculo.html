@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
     <title>Veiculos</title>
   </head>
@@ -20,7 +20,7 @@
       <section>
         <h1>Cadastro de Veiculo</h1>
         <div>
-          Foto:<input type="url" name="imagem-veiculo" id="imagem-veiculo" /> 
+          Foto:<input type="url" name="imagem-veiculo" id="imagem-veiculo" />
         </div>
         <div>
           Modelo:
@@ -40,8 +40,8 @@
     </main>
     <script src="script.js"></script>
     <script>
-      modelosDeCarro = JSON.parse(localStorage.getItem("modelosDeCarro"));
-      marcasDeCarro = JSON.parse(localStorage.getItem("marcasDeCarro"));
+      let marcasDeCarro = pegarMarcasDeCarro()
+      let modelosDeCarro = pegarModelosDeCarro()
 
       for (let modelo of modelosDeCarro) {
         let opcaomodelo = document.getElementsByName("modelo-veiculo")[0];
@@ -56,6 +56,7 @@
         option.innerHTML = marca;
         option.value = marca;
         opcaomarca.appendChild(option);
-      }</script>
+      }
+    </script>
   </body>
 </html>

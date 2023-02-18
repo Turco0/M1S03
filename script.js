@@ -1,14 +1,8 @@
-
-
-let modelosDeCarroJSON = localStorage.getItem('modelosDeCarro');
-let modelosDeCarro = modelosDeCarroJSON? JSON.parse(modelosDeCarroJSON) : [];
-let marcasDeCarroJSON = localStorage.getItem('marcasDeCarro');
-let marcasDeCarro = marcasDeCarroJSON? JSON.parse(marcasDeCarroJSON) : [];
-let veiculosJSON = localStorage.getItem('veiculos');
-let veiculos = veiculosJSON? JSON.parse(veiculosJSON) : [];
-salvarVeiculos(veiculos);
-salvarModelosDeCarro(modelosDeCarro);
-salvarMarcasDeCarro(marcasDeCarro);
+function init() {
+localStorage.setItem('veiculos','');
+localStorage.setItem('marcasDeCarro','');
+localStorage.setItem('modelosDeCarro','');
+}
 
 function adicionarModeloCarro() {
   let modelosDeCarro = pegarModelosDeCarro();
@@ -83,13 +77,19 @@ function salvarVeiculos(veiculos) {
 }
 
 function pegarModelosDeCarro() {
-  return JSON.parse(localStorage.getItem("modelosDeCarro"));
+  let modelosDeCarroJSON = localStorage.getItem("modelosDeCarro");
+  let modelosDeCarro = modelosDeCarroJSON? JSON.parse(modelosDeCarroJSON) : [];
+  return modelosDeCarro;
 }
 
 function pegarMarcasDeCarro() {
-  return JSON.parse(localStorage.getItem("marcasDeCarro"));
+  let marcasDeCarroJSON = localStorage.getItem("marcasDeCarro");
+  let marcasDeCarro = marcasDeCarroJSON? JSON.parse(marcasDeCarroJSON) : [];
+  return marcasDeCarro;
 }
 
 function pegarVeiculos() {
-  return JSON.parse(localStorage.getItem("veiculos"));
+  let veiculosJSON = localStorage.getItem("veiculos");
+  let veiculos = veiculosJSON ? JSON.parse(veiculosJSON) : [];
+  return veiculos;
 }
